@@ -1,0 +1,546 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercadito</title>
+    <link rel="stylesheet" href="Styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #header {
+            margin: auto;
+            width: 500px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        ul,
+        ol {
+            list-style: none;
+        }
+
+        .nav>li {
+            float: right;
+        }
+
+        .nav li a {
+            color: #ffffff;
+            background-color: #ab0d2f;
+            text-decoration: none;
+            padding: 10px 12px;
+            margin-left: -125px;
+            margin-right: 20px;
+            display: block;
+        }
+
+        .nav li a:hover {
+            background-color: #fdfd96;
+            color: rgba(0,0,0, 0.904);
+        }
+
+        .nav li ul {
+            display: none;
+            position: absolute;
+            min-width: 180px;
+        }
+
+        .nav li:hover>ul {
+            display: block;
+        }
+
+        .nav li ul li {
+            position: relative;
+        }
+
+        .nav li ul li ul {
+            right: -140px;
+            top: 50px;
+        }
+
+        select {
+        font-size: 15px;
+        font-weight: bold;
+        border-radius: 25px;
+        background-color: #fafafa;
+        color: #797878;
+        border: 1px solid #c0c0c0;
+        padding: 5px;
+        transition: all 0.8s ease; /* Cambiado para incluir todas las propiedades en la transición */
+        }
+
+        select:focus,
+        select:hover {
+        border: 1px solid rgba(22, 141, 86, 0.904);
+        background-color: #ebebeb;
+        color: black;
+        font-weight: bolder;
+        }
+
+        /* Revertir la transición cuando no está enfocado */
+        select:not(:focus) {
+        background-color: #fafafa;
+        border: 1px solid #c0c0c0;
+        }
+
+        .filtrosL {
+            font-weight: bold;
+            font-size: 16px;
+            padding-left: 50px;
+
+        }
+
+
+        /*Estilos de las estrellas*/
+        #valoracionObras {
+            font-size: 16px;
+            /*Estilo boton filtros*/
+        }
+
+        #aplicar-filtros {
+            font-size: 14px;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #ab0d2f;
+            color: white;
+            border-radius: 15px;
+            width: 80px;
+            height: 30px;
+            border: 1px solid;
+            font-weight: bolder;
+        }
+
+        #aplicar-filtros:hover {
+            border: 1px solid #ab0d2f;
+            background-color:#fdfd96;
+            color: black;
+            font-weight: bolder;
+        }
+
+        .obra {
+            background-color: transparent;
+            display: block;
+            visibility: visible;
+        }
+        h1{
+            font-family: "Open Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+            font-variation-settings:
+            "wdth" 100;
+            color: rgba(255, 255, 255, 0.904);
+        }
+    </style>
+</head>
+
+<body style="background-color: #fdfd96;">
+    <div style="background-color: #ab0d2f; width: 130%;">
+        <header style="width: 100%; margin-left: 0px; height: 15%; ">
+            <div class="container2">
+                <div class="btn-menu">
+                    <div class="logo">
+                    <label style=" color: #ffffff; font-size: 25px; width: 25px; height: 25px; padding-left: 15px;" for="btn-menu">☰</label>
+                    </div>
+                </div>
+            </div>
+            <a href="Inicio.php" style="margin-left: 10px;"><img src="Logo.jpg" alt="Logo" width="65px" height="65px" style="border-radius: 100%; margin: 0px;"></a>
+            <div>
+            <form action="Buscador.php" method="POST" style="margin-top:30px; margin-left:15px; padding:10px; width:320px; height: 66px;">
+                    <input type="text" name="buscar" id="buscar" style="width:280px; height: 35px; border-radius: 50px; border: #fff;">
+                    <button type="submit" style="cursor:pointer; border-radius: 100px; height: 33px; width: 30px; background-color: #fff; border: #fff;">
+                        <img src="https://www.freeiconspng.com/thumbs/search-icon-png/search-icon-png-21.png" alt="Buscar" width="12" height="12">
+                    </button>
+                </form>
+            </div>
+            <div class="Title" style="position: relative; left: 10%;">
+                <h1 style="background-color: transparent; position:relative; margin-left:-10px; font-size: xx-large">Comida Italiana</h1>
+            </div>
+
+            <div id="header">
+                <ul class="nav">
+                    <li>
+                        <a href="" style="position: relative; top: 0px; right: 300px; height: 20px; height: 15px; border-radius: 50px; border:#000; font-size: large;">Categorías</a>
+                        <ul class="Categorias" style="position: absolute; right: 10%; z-index: 1;">
+                            <li><a href="Rapida.html">Comida rápida</a></li>
+                            <li><a href="Oriental.html">Comida oriental</a></li>
+                            <li><a href="Tradicional.html">Comida tradicional</a></li>
+                            <li><a href="Italiana.html">Comida italiana</a></li>
+                            <li><a href="Postres.html">Postres</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <button type="submit" style=" cursor: pointer; border-radius: 50px; height: 40px; width: 30px; position: absolute; top: 30px; right: 140px; background-color: #fff; border: #fff;">
+                    <a href="Subir.html"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Upload_alt_font_awesome.svg/1200px-Upload_alt_font_awesome.svg.png" alt="Subir" width="13" height="13"></a>
+                </button>
+                <a href="Menu Login.html"><img src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png" alt="Profile" width="40px" height="40px" style="border-radius: 50%; margin: 10px; position: absolute; top: 20px; right: 30px;"></a>
+            </div>
+        </header>
+    </div>
+    <div>
+        <form>
+            <div class="filtro" style="display: flex; padding-top: 30px; justify-content: center;">
+
+                <label class="filtrosL" for="tamaño">Tamaño:</label>
+                <select id="Cantidad" style="position: relative; right: -1%">
+                    <option value="Individual">Individual</option>
+                    <option value="Pareja">Para dos personas</option>
+                    <option value="Equipo">De tres a cuatro</option>
+                    <option value="Familia">Familia</option>
+                </select>
+
+                <label class="filtrosL" for="precios">Precio:</label>
+                <select id="precios"  style="position: relative; right: -1%">
+                    <option value="TodosP">Todos</option>
+                    <option value="precio1">Menos de $300</option>
+                    <option value="precio2">$300 - $500</option>
+                    <option value="precio3">$500 - $1,000</option>
+                    <option value="precio4">Mas de $1,000</option>
+                </select>
+
+
+                <label class="filtrosL" for="valoracionObras">Valoración:</label>
+                <select id="valoracionObras" style="margin-right: 30px;position: relative; right: -1%">
+                    <option value="TodosV">Todos</option>
+                    <option value="1">&#9733;</option>
+                    <option value="2">&#9733;&#9733;</option>
+                    <option value="3">&#9733;&#9733;&#9733;</option>
+                    <option value="4">&#9733;&#9733;&#9733;&#9733;</option>
+                    <option value="5">&#9733;&#9733;&#9733;&#9733;&#9733;</option>
+                </select>
+
+                <button id="aplicar-filtros">Filtrar</button>
+            </div>
+        </form>
+
+    </div>
+
+
+    <div class="container-items" style="padding-left: 20%; background-color: #fdfd96;">
+        <a href="Pizza.html" style="color: #000;">
+            <div class="Items">
+                <figure>
+                    <img src="https://media-cdn.tripadvisor.com/media/photo-s/19/20/83/5b/vegetarian.jpg" alt="Pizza Margherita" oncontextmenu="return false">
+                </figure>
+                <div class="infoProducto">
+                    <h2>Pizza Margherita</h2>
+                    <div>
+                        <figcaption class="pinturasT">Pizzas</figcaption> <figcaption class="pinturasE">Italiana</figcaption>
+                        <br>
+                        <b>
+                            <p style="display: contents; font-size: 11px;">Vendedor: </p>
+                        </b>
+                        <p class="Vendedor">Pizzeria Bella</p>
+                    </div>
+                    <p class="Precio">$180.00</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+        </a>
+        
+        <a href="Lasagna.html" style="color: #000;">
+            <div class="Items">
+                <figure>
+                    <img src="https://alimentosdoria.com/wp-content/uploads/2023/06/Como-preparar-Lasagna-Mixta.jpg" alt="Lasagna" oncontextmenu="return false">
+                </figure>
+                <div class="infoProducto">
+                    <h2>Lasagna Bolognese</h2>
+                    <div>
+                        <figcaption class="pinturasT">Pastas</figcaption> <figcaption class="pinturasE">Italiana</figcaption>
+                        <br>
+                        <b>
+                            <p style="display: contents; font-size: 11px;">Vendedor: </p>
+                        </b>
+                        <p class="Vendedor">Cucina Italiana</p>
+                    </div>
+                    <p class="Precio">$220.00</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+        </a>
+        
+        <a href="Risotto.html" style="color: #000;">
+            <div class="Items">
+                <figure>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3UWaxPRricJUA2xcf1cT1MVO0hUznRqbe-A&s" alt="Risotto" oncontextmenu="return false">
+                </figure>
+                <div class="infoProducto">
+                    <h2>Risotto ai Funghi</h2>
+                    <div>
+                        <figcaption class="pinturasT">Arroces</figcaption> <figcaption class="pinturasE">Italiana</figcaption>
+                        <br>
+                        <b>
+                            <p style="display: contents; font-size: 11px;">Vendedor: </p>
+                        </b>
+                        <p class="Vendedor">La Trattoria</p>
+                    </div>
+                    <p class="Precio">$150.00</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+        </a>
+        
+        <a href="Tiramisu.html" style="color: #000;">
+            <div class="Items">
+                <figure>
+                    <img src="https://i0.wp.com/sarasellos.com/wp-content/uploads/2024/04/tiramisu3.jpg?fit=1024%2C768&ssl=1" alt="Tiramisú" oncontextmenu="return false">
+                </figure>
+                <div class="infoProducto">
+                    <h2>Tiramisú</h2>
+                    <div>
+                        <figcaption class="pinturasT">Postres</figcaption> <figcaption class="pinturasE">Italiana</figcaption>
+                        <br>
+                        <b>
+                            <p style="display: contents; font-size: 11px;">Vendedor: </p>
+                        </b>
+                        <p class="Vendedor">Dolce Vita</p>
+                    </div>
+                    <p class="Precio">$85.00</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+        </a>
+        
+        <a href="Frittata.html" style="color: #000;">
+            <div class="Items">
+                <figure>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD-5xhmYCCdL1mG03_mcseB1BFINk_Oy3uYQ&s" alt="Frittata" oncontextmenu="return false">
+                </figure>
+                <div class="infoProducto">
+                    <h2>Frittata de Verduras</h2>
+                    <div>
+                        <figcaption class="pinturasT">Huevos</figcaption> <figcaption class="pinturasE">Italiana</figcaption>
+                        <br>
+                        <b>
+                            <p style="display: contents; font-size: 11px;">Vendedor: </p>
+                        </b>
+                        <p class="Vendedor">Cucina Fresca</p>
+                    </div>
+                    <p class="Precio">$120.00</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+        </a>
+        <a href="PizzaMargherita.html" style="color: #000;">
+            <div class="Items">
+                <figure>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Pizza_Margherita_stu_spivack.jpg/1200px-Pizza_Margherita_stu_spivack.jpg" alt="Pizza Margherita" oncontextmenu="return false">
+                </figure>
+                <div class="infoProducto">
+                    <h2>Pizza Margherita</h2>
+                    <div>
+                        <figcaption class="pinturasT">Pizza</figcaption> <figcaption class="pinturasE">Italiana</figcaption>
+                        <br>
+                        <b><p style="display: contents; font-size: 11px;">Vendedor: </p></b>
+                        <p class="Vendedor">Pizzería La Bella Italia</p>
+                    </div>
+                    <p class="Precio">$150.00</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+        </a>
+        
+        <a href="Lasagna.html" style="color: #000;">
+            <div class="Items">
+                <figure>
+                    <img src="https://www.southernliving.com/thmb/x5xM5QvARl_og39g1jD1N1HfUlA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Extra_Easy_Lasagna_005_16x9-24d8c7469367440bb9aad73e9a83ded9.jpg" alt="Lasagna" oncontextmenu="return false">
+                </figure>
+                <div class="infoProducto">
+                    <h2>Lasagna</h2>
+                    <div>
+                        <figcaption class="pinturasT">Pasta</figcaption> <figcaption class="pinturasE">Italiana</figcaption>
+                        <br>
+                        <b><p style="display: contents; font-size: 11px;">Vendedor: </p></b>
+                        <p class="Vendedor">Ristorante Roma</p>
+                    </div>
+                    <p class="Precio">$200.00</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+        </a>
+        
+        <a href="FettuccineAlfredo.html" style="color: #000;">
+            <div class="Items">
+                <figure>
+                    <img src="https://images.aws.nestle.recipes/resized/cc72869fabfc2bdfa036fd1fe0e2bad8_creamy_alfredo_pasta_long_left_1080_850.jpg" alt="Fettuccine Alfredo" oncontextmenu="return false">
+                </figure>
+                <div class="infoProducto">
+                    <h2>Fettuccine Alfredo</h2>
+                    <div>
+                        <figcaption class="pinturasT">Pasta</figcaption> <figcaption class="pinturasE">Italiana</figcaption>
+                        <br>
+                        <b><p style="display: contents; font-size: 11px;">Vendedor: </p></b>
+                        <p class="Vendedor">La Trattoria</p>
+                    </div>
+                    <p class="Precio">$180.00</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+        </a>
+        
+        <a href="Risotto.html" style="color: #000;">
+            <div class="Items">
+                <figure>
+                    <img src="https://cdn0.uncomo.com/es/posts/2/1/5/como_hacer_un_risotto_facil_37512_orig.jpg" alt="Risotto" oncontextmenu="return false">
+                </figure>
+                <div class="infoProducto">
+                    <h2>Risotto</h2>
+                    <div>
+                        <figcaption class="pinturasT">Arroz</figcaption> <figcaption class="pinturasE">Italiana</figcaption>
+                        <br>
+                        <b><p style="display: contents; font-size: 11px;">Vendedor: </p></b>
+                        <p class="Vendedor">Risotteria Bella</p>
+                    </div>
+                    <p class="Precio">$220.00</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+        </a>
+        
+        <a href="Tiramisu.html" style="color: #000;">
+            <div class="Items">
+                <figure>
+                    <img src="https://i.blogs.es/410470/vasitos/450_1000.jpeg" alt="Tiramisú" oncontextmenu="return false">
+                </figure>
+                <div class="infoProducto">
+                    <h2>Tiramisú</h2>
+                    <div>
+                        <figcaption class="pinturasT">Postre</figcaption> <figcaption class="pinturasE">Italiana</figcaption>
+                        <br>
+                        <b><p style="display: contents; font-size: 11px;">Vendedor: </p></b>
+                        <p class="Vendedor">Dolce Italia</p>
+                    </div>
+                    <p class="Precio">$95.00</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+        </a>
+        
+        <a href="Bruschetta.html" style="color: #000;">
+            <div class="Items">
+                <figure>
+                    <img src="https://www.pomionline.it/media/filer_public_thumbnails/filer_public/05/b0/05b0506a-da1f-4691-9593-0671274bdf8d/bruschetta.jpg__1600x620_q85_crop_subsampling-2.jpg" alt="Bruschetta" oncontextmenu="return false">
+                </figure>
+                <div class="infoProducto">
+                    <h2>Bruschetta</h2>
+                    <div>
+                        <figcaption class="pinturasT">Entrada</figcaption> <figcaption class="pinturasE">Italiana</figcaption>
+                        <br>
+                        <b><p style="display: contents; font-size: 11px;">Vendedor: </p></b>
+                        <p class="Vendedor">Antipasti Ristorante</p>
+                    </div>
+                    <p class="Precio">$85.00</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+        </a>
+        
+        <a href="Cannoli.html" style="color: #000;">
+            <div class="Items">
+                <figure>
+                    <img src="https://coleycooks.com/wp-content/uploads/2024/02/ricotta-cannoli-filling-11-500x375.jpg" alt="Cannoli" oncontextmenu="return false">
+                </figure>
+                <div class="infoProducto">
+                    <h2>Cannoli</h2>
+                    <div>
+                        <figcaption class="pinturasT">Postre</figcaption> <figcaption class="pinturasE">Italiana</figcaption>
+                        <br>
+                        <b><p style="display: contents; font-size: 11px;">Vendedor: </p></b>
+                        <p class="Vendedor">Dolci Siciliani</p>
+                    </div>
+                    <p class="Precio">$65.00</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+        </a>
+        
+        <a href="CapreseSalad.html" style="color: #000;">
+            <div class="Items">
+                <figure>
+                    <img src="https://i.blogs.es/2d572b/caprese/840_560.jpg" alt="Ensalada Caprese" oncontextmenu="return false">
+                </figure>
+                <div class="infoProducto">
+                    <h2>Ensalada Caprese</h2>
+                    <div>
+                        <figcaption class="pinturasT">Ensalada</figcaption> <figcaption class="pinturasE">Italiana</figcaption>
+                        <br>
+                        <b><p style="display: contents; font-size: 11px;">Vendedor: </p></b>
+                        <p class="Vendedor">Trattoria Fresca</p>
+                    </div>
+                    <p class="Precio">$120.00</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+        </a>
+        
+        <a href="Gnocchi.html" style="color: #000;">
+            <div class="Items">
+                <figure>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpxKiJSMcwV-s5m9kRFrIP4_x2EDVjKg28RQ&s" alt="Gnocchi" oncontextmenu="return false">
+                </figure>
+                <div class="infoProducto">
+                    <h2>Gnocchi</h2>
+                    <div>
+                        <figcaption class="pinturasT">Pasta</figcaption> <figcaption class="pinturasE">Italiana</figcaption>
+                        <br>
+                        <b><p style="display: contents; font-size: 11px;">Vendedor: </p></b>
+                        <p class="Vendedor">Pasta Tradizionale</p>
+                    </div>
+                    <p class="Precio">$140.00</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+        </a>
+        <a href="Calzone.html" style="color: #000;">
+            <div class="Items">
+                <figure>
+                    <img src="https://editorialtelevisa.brightspotcdn.com/ac/04/28b5c170467e9d25c03cfd9e26dc/calzone.jpg" alt="Calzone" oncontextmenu="return false">
+                </figure>
+                <div class="infoProducto">
+                    <h2>Calzone</h2>
+                    <div>
+                        <figcaption class="pinturasT">Pizza</figcaption> <figcaption class="pinturasE">Italiana</figcaption>
+                        <br>
+                        <b><p style="display: contents; font-size: 11px;">Vendedor: </p></b>
+                        <p class="Vendedor">Pizzeria Napolitana</p>
+                    </div>
+                    <p class="Precio">$130.00</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+        </a>
+        
+        
+                
+<?php
+include("mostrarObras.php")
+?>
+   
+</div>
+
+    <script src="Index.js"></script>
+    <input type="checkbox" id="btn-menu">
+    <div class="container-menu">
+        <div class="cont-menu">
+            <nav>
+                <a href="#">Favoritos</a>
+                <a href="#">Ajustes</a>
+                <a>Reseñas</a>
+                <ul>
+                    <li><a href="reseñasmias.html">Mias</a></li>
+                    <li><a href="reseñasrecibidas.html">Recibidas</a></li>
+                </ul>
+                <br><br><br><br><br><br>
+                <a href="Menu Login.html">Iniciar Sesion</a>
+            </nav>
+            <label for="btn-menu">✖️</label>
+        </div>
+    </div>
+    </imput>
+
+</body>
+
+</html>

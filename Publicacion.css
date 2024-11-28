@@ -1,0 +1,72 @@
+.pag-container{
+    display: flex;
+    max-width: 2000px;
+    margin: 20 auto;
+    background-color: #ededed;
+    border-radius: 15px;
+    border: 1px solid #e2e2e2;
+}
+.public-cab{
+    width: 600px;
+    border-right: 1px solid #ccc;
+    margin-left: 15px;
+    margin-top: 15px;
+    margin-right: 30px;
+    margin-bottom: 10px;
+}
+.favorit-corazon{
+    position: absolute;
+    max-width: 40;
+    max-height: 42;
+}
+.favorit-corazon img{
+    width: 100%;
+    height: 100%;
+}
+.public-title{
+    width: 500px;
+    margin: 15 auto;
+}
+.public-title h1{
+    text-align: left;
+    margin-left: -5px;
+    font-size: 28;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: none;
+    margin-bottom: -40px;
+    margin-top: -40px;
+}
+.public-title h3{
+    text-align: left;
+    font-size: 15px;
+    color: grey;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 29px;
+    margin-bottom: -23px;
+}
+.public-title h2{
+    text-align: left;
+    font-size: 32;
+    margin-left: 29px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgba(11, 95, 56, 0.904);
+}
+
+h2{
+    color: rgba(11, 95, 56, 0.904);
+}
+.public-title h4{
+    
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15;
+    color: rgb(104, 104, 104);
+    margin-right: 15px;
+}
+.public-title h5{
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(87, 87, 87);
+}
+.public-title h5 b{
+    color: rgb(26, 26, 26);
+}

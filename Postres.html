@@ -1,0 +1,547 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercadito</title>
+    <link rel="stylesheet" href="Styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #header {
+            margin: auto;
+            width: 500px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        ul,
+        ol {
+            list-style: none;
+        }
+
+        .nav>li {
+            float: right;
+        }
+
+        .nav li a {
+            color: #ffffff;
+            background-color: #ab0d2f;
+            text-decoration: none;
+            padding: 10px 12px;
+            margin-left: -125px;
+            margin-right: 20px;
+            display: block;
+        }
+
+        .nav li a:hover {
+            background-color: #fdfd96;
+            color: rgba(0,0,0, 0.904);
+        }
+
+        .nav li ul {
+            display: none;
+            position: absolute;
+            min-width: 180px;
+        }
+
+        .nav li:hover>ul {
+            display: block;
+        }
+
+        .nav li ul li {
+            position: relative;
+        }
+
+        .nav li ul li ul {
+            right: -140px;
+            top: 50px;
+        }
+
+        select {
+        font-size: 15px;
+        font-weight: bold;
+        border-radius: 25px;
+        background-color: #fafafa;
+        color: #797878;
+        border: 1px solid #c0c0c0;
+        padding: 5px;
+        transition: all 0.8s ease; /* Cambiado para incluir todas las propiedades en la transición */
+        }
+
+        select:focus,
+        select:hover {
+        border: 1px solid rgba(22, 141, 86, 0.904);
+        background-color: #ebebeb;
+        color: black;
+        font-weight: bolder;
+        }
+
+        /* Revertir la transición cuando no está enfocado */
+        select:not(:focus) {
+        background-color: #fafafa;
+        border: 1px solid #c0c0c0;
+        }
+
+        .filtrosL {
+            font-weight: bold;
+            font-size: 16px;
+            padding-left: 50px;
+
+        }
+
+
+        /*Estilos de las estrellas*/
+        #valoracionObras {
+            font-size: 16px;
+            /*Estilo boton filtros*/
+        }
+
+        #aplicar-filtros {
+            font-size: 14px;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #ab0d2f;
+            color: white;
+            border-radius: 15px;
+            width: 80px;
+            height: 30px;
+            border: 1px solid;
+            font-weight: bolder;
+        }
+
+        #aplicar-filtros:hover {
+            border: 1px solid #ab0d2f;
+            background-color:#fdfd96;
+            color: black;
+            font-weight: bolder;
+        }
+
+        .obra {
+            background-color: transparent;
+            display: block;
+            visibility: visible;
+        }
+        h1{
+            font-family: "Open Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+            font-variation-settings:
+            "wdth" 100;
+            color: rgba(255, 255, 255, 0.904);
+        }
+    </style>
+</head>
+
+<body style="background-color: #fdfd96;">
+    <div style="background-color: #ab0d2f; width: 130%;">
+        <header style="width: 100%; margin-left: 0px; height: 15%; ">
+            <div class="container2">
+                <div class="btn-menu">
+                    <div class="logo">
+                    <label style=" color: #ffffff; font-size: 25px; width: 25px; height: 25px; padding-left: 15px;" for="btn-menu">☰</label>
+                    </div>
+                </div>
+            </div>
+            <a href="Inicio.php" style="margin-left: 10px;"><img src="Logo.jpg" alt="Logo" width="65px" height="65px" style="border-radius: 100%; margin: 0px;"></a>
+            <div>
+            <form action="Buscador.php" method="POST" style="margin-top:30px; margin-left:15px; padding:10px; width:320px; height: 66px;">
+                    <input type="text" name="buscar" id="buscar" style="width:280px; height: 35px; border-radius: 50px; border: #fff;">
+                    <button type="submit" style="cursor:pointer; border-radius: 100px; height: 33px; width: 30px; background-color: #fff; border: #fff;">
+                        <img src="https://www.freeiconspng.com/thumbs/search-icon-png/search-icon-png-21.png" alt="Buscar" width="12" height="12">
+                    </button>
+                </form>
+            </div>
+            <div class="Title" style="position: relative; left: 10%;">
+                <h1 style="background-color: transparent; position:relative; margin-left:-10px; font-size: xx-large">Postres</h1>
+            </div>
+
+            <div id="header">
+                <ul class="nav">
+                    <li>
+                        <a href="" style="position: relative; top: 0px; right: 300px; height: 20px; height: 15px; border-radius: 50px; border:#000; font-size: large;">Categorías</a>
+                        <ul class="Categorias" style="position: absolute; right: 10%; z-index: 1;">
+                            <li><a href="Rapida.html">Comida rápida</a></li>
+                            <li><a href="Oriental.html">Comida oriental</a></li>
+                            <li><a href="Tradicional.html">Comida tradicional</a></li>
+                            <li><a href="Italiana.html">Comida italiana</a></li>
+                            <li><a href="Postres.html">Postres</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <button type="submit" style=" cursor: pointer; border-radius: 50px; height: 40px; width: 30px; position: absolute; top: 30px; right: 140px; background-color: #fff; border: #fff;">
+                    <a href="Subir.html"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Upload_alt_font_awesome.svg/1200px-Upload_alt_font_awesome.svg.png" alt="Subir" width="13" height="13"></a>
+                </button>
+                <a href="Menu Login.html"><img src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png" alt="Profile" width="40px" height="40px" style="border-radius: 50%; margin: 10px; position: absolute; top: 20px; right: 30px;"></a>
+            </div>
+        </header>
+    </div>
+    <div>
+        <form>
+            <div class="filtro" style="display: flex; padding-top: 30px; justify-content: center;">
+
+                <label class="filtrosL" for="tamaño">Tamaño:</label>
+                <select id="Cantidad" style="position: relative; right: -1%">
+                    <option value="Individual">Individual</option>
+                    <option value="Pareja">Para dos personas</option>
+                    <option value="Equipo">De tres a cuatro</option>
+                    <option value="Familia">Familia</option>
+                </select>
+
+                <label class="filtrosL" for="precios">Precio:</label>
+                <select id="precios"  style="position: relative; right: -1%">
+                    <option value="TodosP">Todos</option>
+                    <option value="precio1">Menos de $300</option>
+                    <option value="precio2">$300 - $500</option>
+                    <option value="precio3">$500 - $1,000</option>
+                    <option value="precio4">Mas de $1,000</option>
+                </select>
+
+
+                <label class="filtrosL" for="valoracionObras">Valoración:</label>
+                <select id="valoracionObras" style="margin-right: 30px;position: relative; right: -1%">
+                    <option value="TodosV">Todos</option>
+                    <option value="1">&#9733;</option>
+                    <option value="2">&#9733;&#9733;</option>
+                    <option value="3">&#9733;&#9733;&#9733;</option>
+                    <option value="4">&#9733;&#9733;&#9733;&#9733;</option>
+                    <option value="5">&#9733;&#9733;&#9733;&#9733;&#9733;</option>
+                </select>
+
+                <button id="aplicar-filtros">Filtrar</button>
+            </div>
+        </form>
+
+    </div>
+
+
+    <div class="container-items" style="padding-left: 20%; background-color: #fdfd96;">
+        <a href="Churros.html" style="color: #000;">
+            <div class="Items">
+                <figure>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhl_Z7zMQFJUJIUyumjoVpkAhqQfu_VLJcuA&s" alt="Churros" oncontextmenu="return false">
+                </figure>
+                <div class="infoProducto">
+                    <h2>Churros</h2>
+                    <div>
+                        <figcaption class="pinturasT">Postres</figcaption> <figcaption class="pinturasE">Mexicana</figcaption>
+                        <br>
+                        <b>
+                            <p style="display: contents; font-size: 11px;">Vendedor: </p>
+                        </b>
+                        <p class="Vendedor">Churros El Buen Sabor</p>
+                    </div>
+                    <p class="Precio">$50.00</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+        </a>
+        
+        <a href="TresLeches.html" style="color: #000;">
+            <div class="Items">
+                <figure>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSplTMJeI3g9-zCRbH4gOomkwTrIgAiqAS0NA&s" alt="Pastel Tres Leches" oncontextmenu="return false">
+                </figure>
+                <div class="infoProducto">
+                    <h2>Pastel Tres Leches</h2>
+                    <div>
+                        <figcaption class="pinturasT">Postres</figcaption> <figcaption class="pinturasE">Mexicana</figcaption>
+                        <br>
+                        <b>
+                            <p style="display: contents; font-size: 11px;">Vendedor: </p>
+                        </b>
+                        <p class="Vendedor">Pastelería Mexicana</p>
+                    </div>
+                    <p class="Precio">$90.00</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+        </a>
+        
+        <a href="Flan.html" style="color: #000;">
+            <div class="Items">
+                <figure>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-EF6AN02YtmbR0TJD1CiHZYgWn9GaFzkszg&s" alt="Flan Mexicano" oncontextmenu="return false">
+                </figure>
+                <div class="infoProducto">
+                    <h2>Flan Mexicano</h2>
+                    <div>
+                        <figcaption class="pinturasT">Postres</figcaption> <figcaption class="pinturasE">Mexicana</figcaption>
+                        <br>
+                        <b>
+                            <p style="display: contents; font-size: 11px;">Vendedor: </p>
+                        </b>
+                        <p class="Vendedor">Flaneros de México</p>
+                    </div>
+                    <p class="Precio">$65.00</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+        </a>
+        
+        <a href="PanDeElote.html" style="color: #000;">
+            <div class="Items">
+                <figure>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6xJtLYviLTV7S1k_jEKw6w3PTx0l2Tmp2WA&s" alt="Pan de Elote" oncontextmenu="return false">
+                </figure>
+                <div class="infoProducto">
+                    <h2>Pan de Elote</h2>
+                    <div>
+                        <figcaption class="pinturasT">Postres</figcaption> <figcaption class="pinturasE">Mexicana</figcaption>
+                        <br>
+                        <b>
+                            <p style="display: contents; font-size: 11px;">Vendedor: </p>
+                        </b>
+                        <p class="Vendedor">La Panadería Mexicana</p>
+                    </div>
+                    <p class="Precio">$40.00</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+        </a>
+        
+        <a href="Capirotada.html" style="color: #000;">
+            <div class="Items">
+                <figure>
+                    <img src="https://www.mexicoenmicocina.com/wp-content/uploads/2015/02/Capirotada1_thumb-1.jpg" alt="Capirotada" oncontextmenu="return false">
+                </figure>
+                <div class="infoProducto">
+                    <h2>Capirotada</h2>
+                    <div>
+                        <figcaption class="pinturasT">Postres</figcaption> <figcaption class="pinturasE">Mexicana</figcaption>
+                        <br>
+                        <b>
+                            <p style="display: contents; font-size: 11px;">Vendedor: </p>
+                        </b>
+                        <p class="Vendedor">La Capirotada de Mamá</p>
+                    </div>
+                    <p class="Precio">$75.00</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+        </a>
+        <a href="Cupcakes.html" style="color: #000;">
+            <div class="Items">
+                <figure>
+                    <img src="https://images.mrcook.app/recipe-image/01910a54-901f-7256-b0ff-9298fc538b7f" alt="Cupcakes" oncontextmenu="return false">
+                </figure>
+                <div class="infoProducto">
+                    <h2>Cupcakes</h2>
+                    <div>
+                        <figcaption class="pinturasT">Postre Variado</figcaption> <figcaption class="pinturasE">Dulce</figcaption>
+                        <br>
+                        <b><p style="display: contents; font-size: 11px;">Vendedor: </p></b>
+                        <p class="Vendedor">Repostería Dulce Encanto</p>
+                    </div>
+                    <p class="Precio">$35.00</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+        </a>
+        
+        <a href="Tiramisu.html" style="color: #000;">
+            <div class="Items">
+                <figure>
+                    <img src="https://cdn7.kiwilimon.com/recetaimagen/36546/51101.jpg" alt="Tiramisu" oncontextmenu="return false">
+                </figure>
+                <div class="infoProducto">
+                    <h2>Tiramisu</h2>
+                    <div>
+                        <figcaption class="pinturasT">Postre Italiano</figcaption> <figcaption class="pinturasE">Dulce</figcaption>
+                        <br>
+                        <b><p style="display: contents; font-size: 11px;">Vendedor: </p></b>
+                        <p class="Vendedor">Dulces de Italia</p>
+                    </div>
+                    <p class="Precio">$95.00</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+        </a>
+        
+        <a href="Cheesecake.html" style="color: #000;">
+            <div class="Items">
+                <figure>
+                    <img src="https://publish-p50513-e440257.adobeaemcloud.com/content/dam/Hersheyland_Mexico/es_mx/recipes/recipe-images/Cheesecake-de-chocolate1.jpg" alt="Cheesecake" oncontextmenu="return false">
+                </figure>
+                <div class="infoProducto">
+                    <h2>Cheesecake</h2>
+                    <div>
+                        <figcaption class="pinturasT">Postre Americano</figcaption> <figcaption class="pinturasE">Dulce</figcaption>
+                        <br>
+                        <b><p style="display: contents; font-size: 11px;">Vendedor: </p></b>
+                        <p class="Vendedor">Repostería Sweet Delight</p>
+                    </div>
+                    <p class="Precio">$150.00</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+        </a>
+        
+        <a href="Flan.html" style="color: #000;">
+            <div class="Items">
+                <figure>
+                    <img src="https://d1uz88p17r663j.cloudfront.net/original/fcef366cb9f5135bc254be335da4862c_49._Flan_de_Caramelo_1.jpg" alt="Flan" oncontextmenu="return false">
+                </figure>
+                <div class="infoProducto">
+                    <h2>Flan</h2>
+                    <div>
+                        <figcaption class="pinturasT">Postre Mexicano</figcaption> <figcaption class="pinturasE">Dulce</figcaption>
+                        <br>
+                        <b><p style="display: contents; font-size: 11px;">Vendedor: </p></b>
+                        <p class="Vendedor">La Dulcería Mexicana</p>
+                    </div>
+                    <p class="Precio">$45.00</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+        </a>
+        
+        <a href="Brownie.html" style="color: #000;">
+            <div class="Items">
+                <figure>
+                    <img src="https://happyvegannie.com/wp-content/uploads/2023/08/los-mejores-brownies-fudgy-10_Thumbnail-Blog-500x500.jpg" alt="Brownie" oncontextmenu="return false">
+                </figure>
+                <div class="infoProducto">
+                    <h2>Brownie</h2>
+                    <div>
+                        <figcaption class="pinturasT">Postre Americano</figcaption> <figcaption class="pinturasE">Dulce</figcaption>
+                        <br>
+                        <b><p style="display: contents; font-size: 11px;">Vendedor: </p></b>
+                        <p class="Vendedor">Dulces & Repostería</p>
+                    </div>
+                    <p class="Precio">$70.00</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+        </a>
+        
+        <a href="Churros.html" style="color: #000;">
+            <div class="Items">
+                <figure>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGndIa0qA_FsU5d5uDyQ-dff_sDH0MqA6aBw&s" alt="Churros" oncontextmenu="return false">
+                </figure>
+                <div class="infoProducto">
+                    <h2>Churros</h2>
+                    <div>
+                        <figcaption class="pinturasT">Postre Mexicano</figcaption> <figcaption class="pinturasE">Dulce</figcaption>
+                        <br>
+                        <b><p style="display: contents; font-size: 11px;">Vendedor: </p></b>
+                        <p class="Vendedor">Dulcería Los Churros</p>
+                    </div>
+                    <p class="Precio">$40.00</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+        </a>
+        
+        <a href="Macarons.html" style="color: #000;">
+            <div class="Items">
+                <figure>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWYr09NbtWIFl_IUERniX8QsldELcUH8yvCA&s" alt="Macarons" oncontextmenu="return false">
+                </figure>
+                <div class="infoProducto">
+                    <h2>Macarons</h2>
+                    <div>
+                        <figcaption class="pinturasT">Postre Francés</figcaption> <figcaption class="pinturasE">Dulce</figcaption>
+                        <br>
+                        <b><p style="display: contents; font-size: 11px;">Vendedor: </p></b>
+                        <p class="Vendedor">Repostería Delicieuse</p>
+                    </div>
+                    <p class="Precio">$120.00</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+        </a>
+        
+        <a href="Gelato.html" style="color: #000;">
+            <div class="Items">
+                <figure>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUO7DAzx6WuSz2S6tlNqEUJFOtJ_WvxlGXmw&s" alt="Gelato" oncontextmenu="return false">
+                </figure>
+                <div class="infoProducto">
+                    <h2>Gelato</h2>
+                    <div>
+                        <figcaption class="pinturasT">Postre Italiano</figcaption> <figcaption class="pinturasE">Dulce</figcaption>
+                        <br>
+                        <b><p style="display: contents; font-size: 11px;">Vendedor: </p></b>
+                        <p class="Vendedor">La Gelatería</p>
+                    </div>
+                    <p class="Precio">$85.00</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+        </a>
+        
+        <a href="Pastelito.html" style="color: #000;">
+            <div class="Items">
+                <figure>
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEif2msiZissmkB-L6VGcHu7GTslN8VI-wKSTnzt91bgJVVAeeusPr3io9lvPNC1xImGMCj-bwJlC_gMhRLSfXLhX59sYdRY-Dq3ZmA0kZIhGSMx8Ra9d3bWhgGfH9FvGlMTRsk18HKuJ4g/w1200-h630-p-k-no-nu/hojaldritos-crema-miguelitos-02b.jpg" alt="Pastelito" oncontextmenu="return false">
+                </figure>
+                <div class="infoProducto">
+                    <h2>Pastelito de Crema</h2>
+                    <div>
+                        <figcaption class="pinturasT">Postre Mexicano</figcaption> <figcaption class="pinturasE">Dulce</figcaption>
+                        <br>
+                        <b><p style="display: contents; font-size: 11px;">Vendedor: </p></b>
+                        <p class="Vendedor">Panadería El Buen Gusto</p>
+                    </div>
+                    <p class="Precio">$50.00</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+        </a>
+        
+        <a href="PastelDeTresLeches.html" style="color: #000;">
+            <div class="Items">
+                <figure>
+                    <img src="https://i.ytimg.com/vi/n0ymEFZJBho/maxresdefault.jpg" alt="Pastel de Tres Leches" oncontextmenu="return false">
+                </figure>
+                <div class="infoProducto">
+                    <h2>Pastel de Tres Leches</h2>
+                    <div>
+                        <figcaption class="pinturasT">Postre Mexicano</figcaption> <figcaption class="pinturasE">Dulce</figcaption>
+                        <br>
+                        <b><p style="display: contents; font-size: 11px;">Vendedor: </p></b>
+                        <p class="Vendedor">Dulcería Mexicana</p>
+                    </div>
+                    <p class="Precio">$150.00</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+        </a>
+
+        
+                
+<?php
+include("mostrarObras.php")
+?>
+   
+</div>
+
+    <script src="Index.js"></script>
+    <input type="checkbox" id="btn-menu">
+    <div class="container-menu">
+        <div class="cont-menu">
+            <nav>
+                <a href="#">Favoritos</a>
+                <a href="#">Ajustes</a>
+                <a>Reseñas</a>
+                <ul>
+                    <li><a href="reseñasmias.html">Mias</a></li>
+                    <li><a href="reseñasrecibidas.html">Recibidas</a></li>
+                </ul>
+                <br><br><br><br><br><br>
+                <a href="Menu Login.html">Iniciar Sesion</a>
+            </nav>
+            <label for="btn-menu">✖️</label>
+        </div>
+    </div>
+    </imput>
+
+</body>
+
+</html>

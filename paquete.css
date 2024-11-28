@@ -1,0 +1,126 @@
+.paquete-container{
+    display: flex;
+    max-width: 1400px;
+    margin: 20 auto;
+    background-color: #ededed;
+    border-radius: 15px;
+    border: 1px solid #e2e2e2;
+    padding-right: 10px;
+}
+.paqu-div1{
+    width: 410px;
+    border-right: 1px solid #ccc;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    color: rgb(10, 10, 143);
+    font-size: 18px;
+    font-weight: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    background-color: rgb(111, 176, 255);
+    border-radius: 15px;
+    padding-left: 10px;
+}
+.paqu-div1 h1{
+    color: rgb(25, 37, 167);
+    font-size: 30px;
+    font-weight: 30px;
+    background-color: rgb(111, 176, 255);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: -10px;
+    border-radius: 50px;
+}
+.paqu-div1 h2{
+    color: rgb(25, 37, 167);
+    font-size: 30px;
+    font-weight: 30px;
+    background-color: rgb(111, 176, 255);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-left: 40px;
+}
+.paqu-div1 h3{
+    color: rgb(67, 74, 150);
+    font-size: 14px;
+    font-weight: 30px;
+    background-color: rgb(111, 176, 255);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.paqu-div2{
+    width: 410px;
+    border-right: 1px solid #ccc;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    color: rgb(143, 10, 10);
+    font-size: 18px;
+    font-weight: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    background-color: rgb(255, 111, 154);
+    border-radius: 15px;
+    padding-left: 10px;
+}
+.paqu-div2 h1{
+    color: rgb(167, 25, 25);
+    font-size: 30px;
+    font-weight: 30px;
+    background-color: rgb(255, 111, 154);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: -1px;
+    border-radius: 50px;
+}
+.paqu-div2 h2{
+    color: rgb(167, 25, 25);
+    font-size: 30px;
+    font-weight: 30px;
+    background-color: rgb(255, 111, 154);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-left: 40px;
+}
+.paqu-div2 h3{
+    color: rgb(150, 67, 67);
+    font-size: 14px;
+    font-weight: 30px;
+    background-color: rgb(255, 111, 154);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.paqu-div3{
+    width: 410px;
+    border-right: 1px solid #ccc;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    color: rgb(10, 143, 37);
+    font-size: 18px;
+    font-weight: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    background-color: rgb(145, 255, 111);
+    border-radius: 15px;
+    padding-left: 10px;
+}
+.paqu-div3 h1{
+    color: rgb(25, 167, 35);
+    font-size: 30px;
+    font-weight: 30px;
+    background-color: rgb(145, 255, 111);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: -10px;
+    border-radius: 50px;
+}
+.paqu-div3 h2{
+    color: rgb(25, 167, 35);
+    font-size: 30px;
+    font-weight: 30px;
+    background-color: rgb(145, 255, 111);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-left: 40px;
+}
+.paqu-div3 h3{
+    color: rgb(67, 150, 81);
+    font-size: 14px;
+    font-weight: 30px;
+    background-color: rgb(145, 255, 111);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}

@@ -1,0 +1,226 @@
+/* Estilos para la página principal y la sección de muestras */
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.Encabezado {
+    padding: 15px;
+    width: 100%;
+    height: 15vh;
+    background-color: #ab0d2f;
+}
+
+.cuerpo {
+    height: 100%;
+    float: left;
+}
+
+.muestras {
+    width: 30%;
+    background-color: #f2f2f2;
+}
+
+.opciones {
+    width: 70%;
+    background-color: #ddd;
+}
+
+.centrar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+}
+
+/* Estilos para la sección de imágenes */
+
+.image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* Estilos para los botones de la página principal */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    justify-content: space-evenly;
+}
+
+.button {
+    display: inline-block;
+    margin: 20px;
+    padding: 15px 30px;
+    background-color: #ab0d2f;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.button:hover,.button:focus {
+    background-color: #2d050d;
+}
+
+
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+
+.social-buttons {
+    width: 30%;
+    text-align: center;
+}
+
+/* Estilos para los botones de registro con logos */
+
+.social-button {
+    display: block;
+    margin: 10px;
+    padding: 10px 20px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.social-button img {
+    max-width: 30px;
+    height: auto;
+    margin-right: 10px;
+}
+
+#register-button:hover{
+    background-color: #7e0b24;
+}
+
+.login-form {
+    margin-left: 100px;
+    height: 100%;
+    width: 60%;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.login-form h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.login-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-form input {
+    width: 100%;
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.redireccionar a {
+    text-decoration: none;
+    color: #4285F4; /* Color de Google */
+    margin-top: 10px;
+}
+
+button[type="submit"] {
+    background-color: #4285F4; /* Color de Google */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#google-button {
+    background-color: #4285F4; /* Color de Google */
+    color: #fff;
+}
+
+#facebook-button {
+    background-color: #1877F2; /* Color de Facebook */
+    color: #fff;
+}
+
+#instagram-button {
+    background-color: #E1306C; /* Color de Instagram */
+    color: #fff;
+}
+
+#hotmail-button {
+    background-color: #0072C6; /* Color de Hotmail/Outlook */
+    color: #fff;
+}
+
+
+/* Estilos para la sección de registro de usuarios */
+.registration-form {
+    width: 50%;
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    max-height: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.registration-form h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.registration-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    margin-bottom: 10px;
+}
+
+.registration-form label {
+    width: 100%;
+    text-align: left;
+    margin: 5px 0;
+}
+
+.registration-form input {
+    width: 80%; 
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.registration-form button[type="submit"] {
+    background-color: #4285F4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}

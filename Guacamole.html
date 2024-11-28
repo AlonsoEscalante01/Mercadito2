@@ -1,0 +1,308 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercadito</title>
+    <link rel="stylesheet" href="Styles.css">
+    <link rel="stylesheet" href="Publicacion.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #header {
+            margin: auto;
+            width: 500px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        ul,
+        ol {
+            list-style: none;
+        }
+
+        .nav>li {
+            float: right;
+        }
+
+        .nav li a {
+            color: #ffffff;
+            background-color: #ab0d2f;
+            text-decoration: none;
+            padding: 10px 12px;
+            margin-left: -125px;
+            margin-right: 20px;
+            display: block;
+        }
+
+        .nav li a:hover {
+            background-color: #fdfd96;
+            color: rgba(0,0,0, 0.904);
+        }
+
+        .nav li ul {
+            display: none;
+            position: absolute;
+            min-width: 180px;
+        }
+
+        .nav li:hover>ul {
+            display: block;
+        }
+
+        .nav li ul li {
+            position: relative;
+        }
+
+        .nav li ul li ul {
+            right: -140px;
+            top: 50px;
+        }
+
+        select {
+        font-size: 15px;
+        font-weight: bold;
+        border-radius: 25px;
+        background-color: #fafafa;
+        color: #797878;
+        border: 1px solid #c0c0c0;
+        padding: 5px;
+        transition: all 0.8s ease; /* Cambiado para incluir todas las propiedades en la transición */
+        }
+
+        select:focus,
+        select:hover {
+        border: 1px solid rgba(22, 141, 86, 0.904);
+        background-color: #ebebeb;
+        color: black;
+        font-weight: bolder;
+        }
+
+        /* Revertir la transición cuando no está enfocado */
+        select:not(:focus) {
+        background-color: #fafafa;
+        border: 1px solid #c0c0c0;
+        }
+
+        .filtrosL {
+            font-weight: bold;
+            font-size: 16px;
+            padding-left: 50px;
+
+        }
+
+
+        /*Estilos de las estrellas*/
+        #valoracionObras {
+            font-size: 16px;
+            /*Estilo boton filtros*/
+        }
+
+        #aplicar-filtros {
+            font-size: 14px;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #ab0d2f;
+            color: white;
+            border-radius: 15px;
+            width: 80px;
+            height: 30px;
+            border: 1px solid;
+            font-weight: bolder;
+        }
+
+        #aplicar-filtros:hover {
+            border: 1px solid #ab0d2f;
+            background-color:#fdfd96;
+            color: black;
+            font-weight: bolder;
+        }
+
+        .obra {
+            background-color: transparent;
+            display: block;
+            visibility: visible;
+        }
+        h1{
+            font-family: "Open Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+            font-variation-settings:
+            "wdth" 100;
+            color: rgba(255, 255, 255, 0.904);
+        }
+        .img1 {
+			position: relative; 
+			top:0px; 
+			left:0px; 
+			border:0px; 
+			overflow:hidden; 
+			display:block;
+		}
+		.img2 {
+			position:absolute; 
+			margin-top:150px; 
+			margin-left: 200px;
+            top:175px;
+			border:0px; 
+			overflow:hidden; 
+			display:none; 
+			clip: rect(0px, 100px, 100px, 0px);
+		}
+    </style>
+</head>
+
+<body style="background-color: #fdfd96;">
+
+    <div style="background-color: #ab0d2f; width: 130%;">
+        <header style="width: 100%; margin-left: 0px; height: 15%; ">
+            <div class="container2">
+                <div class="btn-menu">
+                    <div class="logo">
+                    <label style=" color: #ffffff; font-size: 25px; width: 25px; height: 25px; padding-left: 15px;" for="btn-menu">☰</label>
+                    </div>
+                </div>
+            </div>
+            <a href="Inicio.php" style="margin-left: 10px;"><img src="Logo.jpg" alt="Logo" width="65px" height="65px" style="border-radius: 100%; margin: 0px;"></a>
+            <div>
+            <form action="Buscador.php" method="POST" style="margin-top:30px; margin-left:15px; padding:10px; width:320px; height: 66px;">
+                    <input type="text" name="buscar" id="buscar" style="width:280px; height: 35px; border-radius: 50px; border: #fff;">
+                    <button type="submit" style="cursor:pointer; border-radius: 100px; height: 33px; width: 30px; background-color: #fff; border: #fff;">
+                        <img src="https://www.freeiconspng.com/thumbs/search-icon-png/search-icon-png-21.png" alt="Buscar" width="12" height="12">
+                    </button>
+                </form>
+            </div>
+            <div class="Title" style="position: relative; left: 10%;">
+                <h1 style="background-color: transparent; position:relative; margin-left:-10px; font-size: xx-large">Más consumido</h1>
+            </div>
+
+            <div id="header">
+                <ul class="nav">
+                    <li>
+                        <a href="" style="position: relative; top: 0px; right: 300px; height: 20px; height: 15px; border-radius: 50px; border:#000; font-size: large;">Categorías</a>
+                        <ul class="Categorias" style="position: absolute; right: 10%; z-index: 1;">
+                            <li><a href="Rapida.html">Comida rápida</a></li>
+                            <li><a href="Oriental.html">Comida oriental</a></li>
+                            <li><a href="Tradicional.html">Comida tradicional</a></li>
+                            <li><a href="Italiana.html">Comida italiana</a></li>
+                            <li><a href="Postres.html">Postres</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <button type="submit" style=" cursor: pointer; border-radius: 50px; height: 40px; width: 30px; position: absolute; top: 30px; right: 140px; background-color: #fff; border: #fff;">
+                    <a href="Subir.html"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Upload_alt_font_awesome.svg/1200px-Upload_alt_font_awesome.svg.png" alt="Subir" width="13" height="13"></a>
+                </button>
+                <a href="Menu Login.html"><img src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png" alt="Profile" width="40px" height="40px" style="border-radius: 50%; margin: 10px; position: absolute; top: 20px; right: 30px;"></a>
+            </div>
+        </header>
+    </div>
+    <div>
+        <form>
+            <div class="filtro" style="display: flex; padding-top: 30px; justify-content: center;">
+
+                <label class="filtrosL" for="tamaño">Tamaño:</label>
+                <select id="Cantidad" style="position: relative; right: -1%">
+                    <option value="Individual">Individual</option>
+                    <option value="Pareja">Para dos personas</option>
+                    <option value="Equipo">De tres a cuatro</option>
+                    <option value="Familia">Familia</option>
+                </select>
+
+                <label class="filtrosL" for="precios">Precio:</label>
+                <select id="precios"  style="position: relative; right: -1%">
+                    <option value="TodosP">Todos</option>
+                    <option value="precio1">Menos de $300</option>
+                    <option value="precio2">$300 - $500</option>
+                    <option value="precio3">$500 - $1,000</option>
+                    <option value="precio4">Mas de $1,000</option>
+                </select>
+
+
+                <label class="filtrosL" for="valoracionObras">Valoración:</label>
+                <select id="valoracionObras" style="margin-right: 30px;position: relative; right: -1%">
+                    <option value="TodosV">Todos</option>
+                    <option value="1">&#9733;</option>
+                    <option value="2">&#9733;&#9733;</option>
+                    <option value="3">&#9733;&#9733;&#9733;</option>
+                    <option value="4">&#9733;&#9733;&#9733;&#9733;</option>
+                    <option value="5">&#9733;&#9733;&#9733;&#9733;&#9733;</option>
+                </select>
+
+                <button id="aplicar-filtros">Filtrar</button>
+            </div>
+        </form>
+
+    </div>
+    <div class="pag-container">
+        <div class="public-cab">
+            <img name="nor" class="img1" src="https://www.allrecipes.com/thmb/p4OH2iCMjg6-cgzI__Nwn9VR-r0=/0x512/filters:no_upscale():max_bytes(150000):strip_icc()/AR-RM-14064-easy-guacamole-ddmfs-3x4-9e4a1eb1bb34421a99db675b53a29e53.jpg" width="650" alt="Guacamole con Totopos" oncontextmenu="return false">
+            <img name="big" class="img2" src="https://www.allrecipes.com/thmb/p4OH2iCMjg6-cgzI__Nwn9VR-r0=/0x512/filters:no_upscale():max_bytes(150000):strip_icc()/AR-RM-14064-easy-guacamole-ddmfs-3x4-9e4a1eb1bb34421a99db675b53a29e53.jpg" width="1170" alt="Guacamole con Totopos" oncontextmenu="return false">
+        </div>
+        <div class="public-title">
+            <div class="favorit.corazon" style="margin-left: 450px;">
+                <img src="corazon-favorito.png" alt="fov">
+            </div>
+            <h1 style="color: rgb(91, 91, 91);">Guacamole con Totopos</h1><br>
+            <h3>Antojitos Don Nacho</h3><br>
+            <br>
+            <h2 style="color: #ab0d2f;">$45.00</h2><br>
+            <h4>Sabroso guacamole fresco acompañado de crujientes totopos, perfecto para compartir con amigos o disfrutar en cualquier momento. ¡El acompañamiento ideal para tu tarde!</h4>
+        </div>
+    </div>
+    
+    
+  
+        
+    <script src="Index.js"></script>
+    <input type="checkbox" id="btn-menu">
+            <div class="container-menu">
+	            <div class="cont-menu">
+		            <nav>
+		        	    <a href="Menu Login.html">Perfil</a>
+			            <a href="#">Favoritos</a>
+			            <a href="Chating.php">Conversaciones</a>
+			            <a href="#">Ajustes</a>
+                        <a href="Reportes.html">Reporte</a>
+                        <a>Reseñas</a>
+                        <ul>
+                            <li><a href="reseñasmias.html">Mias</a></li>
+                            <li><a href="reseñasrecibidas.html">Recibidas</a></li>
+                        </ul>
+			            <br><br><br><br><br><br>
+			            <a href="#">Cerrar Sesion</a>
+		            </nav>
+		            <label for="btn-menu">✖️</label>
+	            </div>
+            </div>
+        </imput>
+
+    <script type="text/javascript">
+
+        document.onmousemove=mtrack;
+        function mtrack(e) {
+            var x,y,x1,x2,y1,y2;
+            fact=800/400;
+            opp=50;
+
+            if (e==null) e=window.event;
+            x=e.clientX;
+            y=e.clientY;
+
+            x1=-opp+(x)*fact;
+            y1=-opp+(y)*fact; 
+            x2=+opp+(x)*fact; 
+            y2=+opp+(y)*fact; 
+
+            document.images.big.style.display="inline";
+            document.images.big.style.left=(x)*(1-fact);
+            document.images.big.style.top=(y)*(1-fact);
+            document.images.big.style.clip="rect("+y1+"px,"+x2+"px,"+y2+"px,"+x1+"px)";
+        }
+</script>
+</body>
+
+</html>

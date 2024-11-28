@@ -1,0 +1,188 @@
+h1 {
+    background-color: rgba(200, 132, 223, 0.701);
+    padding: 35px;
+    margin-left: 150px;
+    margin-right: 157px;
+    margin-top: -87px;
+    border-top: 0px;
+    text-align: center; 
+    font-family: 'copperplate gothic'; 
+}
+
+#formulario {
+    padding-top: 35px;
+}
+
+p {
+    font-family: arial;
+    padding-left: 135px;
+    padding-top: 35px;
+}
+
+.menuReporte {
+    padding-top: 7px;
+    padding-left: 350px;
+    width: 700px;
+    list-style: none;
+    font-family: arial;
+    font-weight:normal;
+}
+
+.menuReporte a {
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.menuReporte a:hover {
+    background-color: #ccc;
+}
+
+.menuReporte a.active {
+    background-color: #04AA6D;
+    color:beige;
+}
+
+/* Menu lateral */
+#btn-menu {
+    display: none;
+
+ }
+
+ .container2 .btn-menu,
+ .logo {
+    float: left;
+    line-height: 100px;
+ }
+
+ .container2 .btn-menu label {
+    color: #000000;
+    font-size: 40px;
+    cursor: pointer;
+ }
+
+ .container-menu {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    transition: all 500ms ease;
+    opacity: 0;
+    visibility: hidden;
+ }
+
+ #btn-menu:checked~.container-menu {
+    opacity: 1;
+    visibility: visible;
+ }
+
+ .cont-menu {
+    width: 100%;
+    max-width: 250px;
+    background: #1c1c1c;
+    height: 100vh;
+    position: relative;
+    transition: all 500ms ease;
+    transform: translateX(-100%);
+ }
+
+ #btn-menu:checked~.container-menu .cont-menu {
+    transform: translateX(0%);
+ }
+
+ .cont-menu nav {
+    transform: translateY(15%);
+ }
+
+ .cont-menu nav a {
+    display: block;
+    text-decoration: none;
+    padding: 20px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    color: #c7c7c7;
+    border-left: 5px solid transparent;
+    transition: all 400ms ease;
+ }
+
+ .cont-menu nav a:hover {
+    border-left: 8px solid #c7c7c7;
+    background: #5c5c5c;
+ }
+ .cont-menu nav ul {
+   margin-left: 13px;
+}
+
+ .cont-menu label {
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+ }
+
+
+ /* Fin de menu desplegable*/
+
+ /* Formulario para hacer un reporte */
+
+ .formularioReporte {
+	width:570px;
+	padding:16px;
+	border-radius:10px;
+	margin: auto;
+	margin-top: 17px;
+	background-color: rgba(200, 132, 223, 0.701);
+	font-family: arial;
+}
+
+form label{
+	width:72px;
+	font-weight:bold;
+	display:inline-block;
+}
+
+form input[type="text"],
+form input[type="email"]{
+	width:350px;
+	padding:3px 10px;
+	border:1px solid #ffffff;
+    border-radius:3px;
+	background-color:#ffffff;
+	margin:8px 0;
+	display:inline-block;
+}
+
+form input[type="submit"]{
+	width:100%;
+	padding:8px 16px;
+	margin-top:32px;
+	border:1px solid #000;
+	border-radius:5px;
+	display:block;
+	color:#fff;
+	background-color:#000;
+} 
+
+
+form input[type="submit"]:hover{
+	cursor:pointer;
+}
+
+textarea{
+	width:100%;
+	height:100px;
+	border:1px solid #ffffff;
+	border-radius:3px;
+	background-color:#ffffff;			
+	margin:8px 0;
+	/*resize: vertical | horizontal | none | both*/
+	resize:none;
+	display:block;
+}
+
+/* Fin formulario para hacer un reporte */
